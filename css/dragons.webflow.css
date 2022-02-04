@@ -73,6 +73,7 @@ p {
     top: 1vw;
     right: 1vw;
 	font-size: 1.5vw;
+	letter-spacing: 3px;
   }
 
 
@@ -197,28 +198,6 @@ p {
 	border-radius: 50%;
 	border: .2em red outset;
     animation: glow 1.6s linear infinite;
-}
-
-#mint-description {
-	width:52%;
-	display: inline-block;
-	margin-left:3%;
-	margin-right:4%;
-}
-
-#number-to-mint {
-	font-size:3.5vw;
-	line-height:4vw;
-}
-
-.increment-button {
-	font-size:4vw;
-	line-height:4vw;
-	background-color: transparent;
-}
-
-.increment-button:hover {
-	cursor: pointer;
 }
 
 @keyframes glow {
@@ -473,14 +452,6 @@ p {
 	font-family: 'Retro';
 }
 
-#mint-button, #connect-button {
-	width: 33%;
-}
-
-#mint-button {
-	height: 4vw;
-}
-
 .link {
 	color: white;
 	text-decoration: none
@@ -603,11 +574,11 @@ h5 {
     width: 100%;
     text-decoration: none;
     height: 5%;
-	background-color: rgba(95, 92, 92);
+	background-color: black;
     border: solid white .3em;
     color: white;
-    font-size: .8vw;
-    line-height: 1.1vw;
+    font-size: 1.2vw;
+    line-height: 1.5vw;
     padding: 20px;
     text-align: center;
 }
@@ -617,7 +588,7 @@ h5 {
 }
 
 #error-popup, #status-popup {
-	background-color: rgba(95, 92, 92);
+	background-color: black;
     z-index: 99999;
     position:fixed;
     top:50%;
@@ -1063,8 +1034,8 @@ h5 {
       }
     
       .loading-div {
-        font-size: 3vw !important;
-        line-height: 3.6vw !important;
+        font-size: 4vw !important;
+        line-height: 4.6vw !important;
       }
 
     #error-popup, #status-popup {
