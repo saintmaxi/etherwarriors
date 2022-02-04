@@ -19,7 +19,7 @@
 }
 
 #header, #title-section {
-    margin: 1% 0 1% 0%;
+    margin: 10px 0 10px 0%;
     padding: 0;
 }
 
@@ -77,13 +77,13 @@
 }
 
 #about-text-desktop {
-    width: 55%;
+    width: 60%;
     margin-left: 2.5%;
     margin-right:2.5%
 }
 
 #about-gif {
-    width: 40%;
+    width: 30%;
 }
 
 /* end about section styling */
@@ -126,7 +126,7 @@
 .team-member img {
 	/* border: 3px solid white;
 	background-color: grey; */
-	width: 100%;
+	width: 60%;
 	margin: 10px;
 }
 
