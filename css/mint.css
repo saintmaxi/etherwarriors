@@ -156,6 +156,7 @@
 
     #quantity-controls {
         margin-bottom: 0;
+        width: 100%;
     }
     
     #mint button {
@@ -176,8 +177,8 @@
     
     .increment-button {
       width: initial;
-      font-size: calc(30px + 4.5vw) !important;
-      line-height: calc(30px + 3.5vw) !important;
+      font-size: calc(20px + 4.5vw) !important;
+      line-height: calc(20px + 3.5vw) !important;
       background-color: transparent;
     }
     
