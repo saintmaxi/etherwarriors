@@ -72,14 +72,15 @@ p {
 	text-align: center;
     top: 1vw;
     right: 1vw;
-	font-size: 1.5vw;
+	font-size: 1.3vw;
 	letter-spacing: 3px;
   }
 
 
 .body {
 	/* background-image: url(../images/bg.png); */
-	background-color: rgb(26, 25, 25);
+	/* background-color: rgb(26, 25, 25); */
+	background-color: black;
 	font-family: 'Retro', sans-serif;
 	background-size: auto;
 	background-repeat: repeat;
@@ -305,7 +306,7 @@ p {
 }
 
 .banner img {
-	object-fit: fill;
+	object-fit:cover;
 	z-index: -5;
 }
 

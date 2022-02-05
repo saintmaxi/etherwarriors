@@ -73,6 +73,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 70%;
 }
 
 #mint {
@@ -138,6 +139,10 @@
 @media screen and (max-width: 767px) {
 
     /* start minting styling */
+
+    #mint-container {
+        height: initial;
+    }
 
     #mint {
         width: 90%;
