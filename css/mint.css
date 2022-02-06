@@ -135,7 +135,31 @@
 
 /* end minting styling */
 
+/* Mint loading gif */
+
+#loading-popup {
+    border: solid .5vw white;
+	background-color: black;
+    padding:5vw;
+    z-index: 99999;
+    position:fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 33vw;
+    border-radius: .2em;
+    text-align: center;
+    box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
+}
+
 @media screen and (max-width: 767px) {
+
+    /* Mint loading gif */
+
+    #loading-popup {
+        width: 75vw;
+		border-width: 5px;
+    }
 
     /* start minting styling */
 
