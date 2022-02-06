@@ -86,7 +86,7 @@
 }
 
 #max-button {
-    font-family: "Retro";
+    font-family: "Block";
     width:25%;
 }
 
@@ -118,11 +118,10 @@
 
   
 #number-to-mint {
-    font-size: calc(20px + 3vw) !important;
-    line-height: calc(20px + 3vw) !important;
-    font-family: "Retro";
+    font-size: calc(20px + 5vw) !important;
+    line-height: calc(20px + 5vw) !important;
+    font-family: "Block";
     letter-spacing: 5px;
-
 }
   
 #mint-prompt {
@@ -146,6 +145,7 @@
 
     #mint {
         width: 90%;
+        padding: 10px !important;
     }
 
     #mint-header {
@@ -189,8 +189,8 @@
     }
     
     #number-to-mint {
-      font-size: calc(25px + 3.5vw) !important;
-      line-height: calc(25px + 3.5vw) !important;
+      font-size: calc(25px + 4.5vw) !important;
+      line-height: calc(25px + 4.5vw) !important;
     }
 
     #sold-out {

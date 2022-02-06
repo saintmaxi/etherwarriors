@@ -1,17 +1,13 @@
 @font-face {  
-	font-family: 'Retro';
-	/* src: URL('../css/gomarice_no_continue.ttf') format('truetype');
-	 */
-	src: URL('../css/8-bit-limit.r-brk.ttf') format('truetype');
-
-}  
-
-@font-face {  
 	font-family: 'Pixel';
 	/* src: URL('../css/ConnectionIi-2wj8.otf') format('truetype');
 	 */
 	src: URL('../css/Connection-arMJ.otf') format('truetype');
+}  
 
+@font-face {  
+	font-family: 'Block';
+	src: URL('../css/upheavtt.ttf') format('truetype');
 }  
 
 .w-layout-grid {
@@ -28,7 +24,6 @@
 
 html, body {
 	overscroll-behavior: none;
-	font-family: 'Retro', sans-serif;
 	margin: 0;
 	width: 100%;
 	height: 100%;
@@ -47,6 +42,12 @@ select {
 
 h1, h2 {
 	letter-spacing: 5px;
+}
+
+h1 {
+	font-family: "Block";
+	color: #F5CD03 !important;
+	font-size: 2.5vw !important;
 }
 
 p {
@@ -79,9 +80,8 @@ p {
 
 .body {
 	/* background-image: url(../images/bg.png); */
-	/* background-color: rgb(26, 25, 25); */
 	background-color: black;
-	font-family: 'Retro', sans-serif;
+	font-family: 'Block', sans-serif;
 	background-size: auto;
 	background-repeat: repeat;
 	color: white;
@@ -122,7 +122,6 @@ p {
 	padding-top: 40px;
 	padding-bottom: 40px
 }
-
 
 
 .text-block {
@@ -275,14 +274,12 @@ p {
 }
 
 .message-text {
-	font-family: 'Retro', sans-serif;
 	font-size: 20px;
 	line-height: 25px;
 	text-align: center
 }
 
 .banner-text {
-	font-family: 'Retro', sans-serif;
 	color: white;
 	font-size: 50px;
 	text-align: center;
@@ -335,6 +332,7 @@ p {
 
 .footer .link:hover {
   transform: translate(0, -5px);
+  opacity: .8;
 }
 
 .lightning{
@@ -450,7 +448,9 @@ p {
 	color: white;
 	font-size: 1.7vw;
 	padding: .5vw;
-	font-family: 'Retro';
+	font-family: 'Block';
+    border: .5vw solid white;
+	border-radius: 2px;
 }
 
 .link {
@@ -826,6 +826,7 @@ h5 {
 .box {
 	border-style: solid;
 	border-color: white;
+    border-bottom: .5vw solid white;
 	border-radius: 2px;
 	border-width: .5vw;
 	padding: 20px;
@@ -838,7 +839,7 @@ h5 {
 }
 
 .box3 {
-	background-color: rgba(95, 92, 92, 0.336);
+	background-color: black;
 	padding: 50px;
 	border-style: solid;
 	border-color: white;
@@ -962,6 +963,7 @@ h5 {
 		font-size: 2.3vh;
 		line-height: 2.3vh ;	
 		padding: 5px;
+        border: 5px solid white;
 	}
 
 	p {
@@ -1047,6 +1049,11 @@ h5 {
     #error-popup p, #status-popup p {
         font-size: 3vw !important;
     }
+
+	h1 {
+		font-size: 5.5vh !important;
+		line-height: 5.5vh !important;
+	}
 
 }
 

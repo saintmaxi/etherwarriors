@@ -132,6 +132,11 @@
 
 /* end team section styling */
 
+#bottom-socials a {
+    width: 4vw;
+    height: 4vw;
+}
+
 
 @media screen and (max-width: 991px) {
     /* start header-navbar styling */
@@ -212,7 +217,8 @@
 
 	.team-member {
 		width: 95%;
-		margin: 2%;
+		margin: 0%;
+        padding-bottom: 4%;
 	}
 
     /* end team section styling */
@@ -238,6 +244,11 @@
     #about-info {
         font-size: 2.8vh !important;
         line-height: 3.3vh !important;
+    }
+
+    #bottom-socials a {
+        width: 7vh;
+        height: 7vh;
     }
 
 }
