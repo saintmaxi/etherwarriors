@@ -9,11 +9,11 @@
 
 // const etherscanBase = `https://etherscan.io/tx/`;
 // const correctChain = 1;
-// const MAX_MINT = 5;
-// const MAX_MINT_WL = 2;
+// const MAX_MINT = 3;
+// const MAX_MINT_WL = 3;
 // const MAX_SUPPLY = 10000;
-// const priceWei = "100000000000000000";
-// const priceEth = .1
+// const priceWei = "85000000000000000";
+// const priceEth = .085
 // const openseaLink = "";
 // const looksrareLink = "";
 
@@ -28,11 +28,11 @@ const warriorsAbi = () => {
 
 const etherscanBase = `https://rinkeby.etherscan.io/tx/`;
 const correctChain = 4;
-const MAX_MINT = 5;
-const MAX_MINT_WL = 2;
+const MAX_MINT = 3;
+const MAX_MINT_WL = 3;
 const MAX_SUPPLY = 10000;
-const priceWei = "100000000000000000";
-const priceEth = .1
+const priceWei = "85000000000000000";
+const priceEth = .085
 const openseaLink = "";
 const looksrareLink = "";
 
