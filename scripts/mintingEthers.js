@@ -83,17 +83,17 @@ function decrementClaim() {
 
 function updatePrice() {
     let currentClaim = Number($("#number-to-mint").text());
-    totalMinted += 1;
-    if (totalMinted <= 5000) {
-        $("#current-cost").html(`${(priceEth * currentClaim).toFixed(2)} <span style="font-family: Arial, Helvetica, sans-serif;">Ξ</span>`)
+    let totalMintedAfter = totalMinted += 1;
+    if (totalMintedAfter <= 5000) {
+        $("#current-cost").html(`${(priceEth * currentClaim).toFixed(3)} <span style="font-family: Arial, Helvetica, sans-serif;">Ξ</span>`)
     }
-    else if (totalMinted > 5000 && totalMinted <= 6000) {
+    else if (totalMintedAfter > 5000 && totalMinted <= 6000) {
         $("#current-cost").text(`${(50 * currentClaim)} $RAID`)
     }
-    else if (totalMinted > 6000 && totalMinted <= 8000) {
+    else if (totalMintedAfter > 6000 && totalMinted <= 8000) {
         $("#current-cost").text(`${(250 * currentClaim)} $RAID`)
     }
-    else if (totalMinted > 8000 && totalMinted <= 10000) {
+    else if (totalMintedAfter > 8000 && totalMinted <= 10000) {
         $("#current-cost").text(`${(500 * currentClaim)} $RAID`)
     }
 }
@@ -116,11 +116,23 @@ function incrementClaim() {
 const setMaxMint = async() => {
     if (whitelistIsLive && !publicIsLive) {
         $("#number-to-mint").text(MAX_MINT_WL);
-        $("#current-cost").text((priceEth * MAX_MINT_WL).toFixed(2))
+        $("#current-cost").text((priceEth * MAX_MINT_WL).toFixed(3))
     }
     else {
         $("#number-to-mint").text(MAX_MINT);
-        $("#current-cost").text((priceEth * MAX_MINT).toFixed(2))
+        let totalMintedAfter = totalMinted += 1;
+        if (totalMintedAfter <= 5000) {
+            $("#current-cost").html(`${(priceEth * MAX_MINT).toFixed(3)} <span style="font-family: Arial, Helvetica, sans-serif;">Ξ</span>`)
+        }
+        else if (totalMintedAfter > 5000 && totalMinted <= 6000) {
+            $("#current-cost").text(`${(50 * MAX_MINT)} $RAID`)
+        }
+        else if (totalMintedAfter > 6000 && totalMinted <= 8000) {
+            $("#current-cost").text(`${(250 * MAX_MINT)} $RAID`)
+        }
+        else if (totalMintedAfter > 8000 && totalMinted <= 10000) {
+            $("#current-cost").text(`${(500 * MAX_MINT)} $RAID`)
+        }
     }
 }
 
