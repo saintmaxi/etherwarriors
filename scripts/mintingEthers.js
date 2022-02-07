@@ -38,6 +38,10 @@ const looksrareLink = "";
 
 /*********************************END CONFIG************************************/
 
+if (window.ethereum == undefined) {
+    displayErrorMessage('Use a web3 enabled browser to mint!');
+}
+
 const provider = new ethers.providers.Web3Provider(window.ethereum,"any");
 const signer = provider.getSigner();
 const warriors = new ethers.Contract(warriorsAddress, warriorsAbi(), signer);

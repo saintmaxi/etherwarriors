@@ -1,25 +1,4 @@
-
-h1, h2 {
-    margin-top: 0;
-}
-
-#account {
-    position: absolute;
-    display: inline;
-    text-align: center;
-    top: 19px;
-    right: 17px;
-}
-
-button {
-    font-size: 1vw !important;
-}
-
-#top {
-    padding-bottom: 5px !important;
-}
-
-#scale-description {
+#raid-description {
     margin:auto;
     text-align: center;
     font-family: 'Pixel';
@@ -29,10 +8,11 @@ button {
 }
 
 h2 {
-    font-size: 1.5vw;
+    letter-spacing: 1px;
+	color: #F5CD03 !important;
 }
 
-#scale-balances {
+#raid-balances {
     text-align: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -56,28 +36,41 @@ h2 {
     align-items: center;
 }
 
-.scale-balance-container {
+.raid-balance-container {
     padding: 10px;
     margin-bottom: 10px;
     width: 39vw;
 }
 
-.scale-balance-container button {
+.raid-balance-container button {
     width: 75%;
 }    
 
-#your-scale-container {
+#your-raid-container {
     margin-right: 2vw;
 }
 
-#your-dragon-section {
+#your-warrior-section {
     width:80vw;
     margin: auto;
     text-align: center;
     min-height:40vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
 }
 
-#available-dragon-images, #available-elder-images, #available-baby-images {
+.staking-section {
+    width: 45%;
+    margin: 2.5%;
+}
+
+#available-warrior-images, #staked-warrior-images {
+    border: solid .5vw white;
+    border-radius: 2px;
+    min-height: 20vh;
     text-align: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -101,31 +94,56 @@ h2 {
     align-items: center;
 }
 
-#genesis-label {
-    margin-bottom: 1vw;
-}
-
-#elder-label, #baby-label {
-    margin: 2vw;
-}
-
-.your-dragon {
-    width: 17%;
+.your-warrior {
+    width: 25%;
     font-size: 1.3vw;
     margin: 10px;
+    transition: transform ease 300ms;
 }
 
-.your-dragon img {
+.your-warrior img {
     margin: 5px;
 }
 
-.dragon-id {
-    text-align: center;
-    margin-top: 5px;
+.warrior-id, .raid-earned {
+    color: black;
+    margin-bottom: 0px;
+  }
+  
+.your-warrior:hover {
+    transform: translate(0, -5px);
 }
 
-.hide-on-desktop {
-    display: none !important;
+.your-warrior:hover .warrior-id, .your-warrior:hover .raid-earned {
+    color: #629658 !important;
+  }
+
+
+  .your-warrior:hover img {
+    border: solid .25vw #629658;
+    cursor: pointer;
+  }
+  
+  .active img {
+    border: solid .25vw #629658;
+  }
+
+  .active img, .active p{
+    color: #629658 !important;
+  }
+
+  .selected {
+    color: white;
+  }
+
+  .active img, .active p{
+    border-color: #629658;
+    color: #629658 !important;
+  }
+
+.warrior-id {
+    text-align: center;
+    margin-top: 5px;
 }
 
 .one {
@@ -178,29 +196,11 @@ h2 {
 
 @media screen and (max-width: 991px) {
 
-    #genesis-label, #elder-label, #baby-label {
-        font-size: 1.9vh !important;
-        line-height: 2.7vh !important;
-    }
-
-    .no-dragons-msg {
+    .no-warriors-msg {
         font-size: 1.5vh !important;
     }
 
-    .hide-on-desktop {
-        display: block !important;
-    }
-    
-    .hide-on-mobile {
-        display: none !important;
-    }
-
-    #mobile-account {
-        width:80%;
-        margin-top: 10px;
-    }
-
-    #scale-description {
+    #raid-description {
         margin:auto;
         text-align: center;
         width: 95%;
@@ -213,37 +213,43 @@ h2 {
         line-height: 2.7vh !important; 
     }
 
-    button {
-        font-size: 1.7vh !important;
-        line-height: 1.7vh !important;
-    }
-
-    .scale-balance-container {
+    .raid-balance-container {
         width: 95vw;
     }
 
-    .scale-balance-container h2 {
+    .raid-balance-container h2 {
         font-size: 3vh;
     }    
 
-    .scale-balance-container button {
+    .raid-balance-container button {
         width: 95%;
         font-size: 2.5vh;
         padding: 20px;
     }    
 
-    #your-scale-container {
+    #your-raid-container {
         margin-right: initial;
     }
 
-    #your-dragon-section {
+    #your-warrior-section {
         width:95vw;
         min-height: 0;
         margin: auto;
+        display: block;
     }
 
-    #available-dragon-images, #available-elder-images, #available-baby-images {
+    .staking-section {
+        width: 95%;
+        margin: 2.5%;
+    }
+
+    #staked-warriors-wrapper {
+        margin-top: 30px;
+    }
+
+    #available-warrior-images, #staked-warrior-images {
         width: 100%;
+        border-width: 5px;
         text-align: center;
         display: -webkit-box;
         display: -webkit-flex;
@@ -271,30 +277,16 @@ h2 {
         padding: 20px;
     }
 
-    .your-dragon {
+    .your-warrior {
         width: 41%;
     }
 
-    #pending-transactions {
-        min-width: 85%;
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
-      }
-    
-      .loading-div {
-        font-size: 4vw;
-        line-height: 4vw;
+    .warrior-id, .raid-earned {
+          font-size: 3vh;
+          line-height: 3.2vh;
       }
 
-    #error-popup, #status-popup {
-        width: 75vw;
-        height: 15vh;
-    }
-
-    #error-popup p, #status-popup p {
-        font-size: 4vw;
-        line-height: 4vw;
-    }
+      .active img {
+        border: solid 3px #629658;
+      }
 }

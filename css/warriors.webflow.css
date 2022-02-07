@@ -34,6 +34,12 @@ h2 {
 	margin-bottom: 10px;
 }
 
+h3 {
+	font-size: 1.5vw !important;
+	line-height: 1.5vw !important;
+	margin: .5vw !important;
+}
+
 p {
 	font-family: "Pixel";
 	text-align: justify;
@@ -223,21 +229,20 @@ h5 {
     transform: translate(-50%, -50%);
     width: 53vw;
     height: 35vh;
-    border: solid .3em white;
+    border: solid .5vw white;
     border-radius: .2em;
     text-align: center;
     box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
 }
 
 #error-popup p, #status-popup p {
-    width: 100%;
-    font-size: 3vw;
-    line-height: 3vw;
+    width: 95%;
+    font-size: 3vw !important;
+    line-height: 3vw !important;
     position: absolute;
     color: white;
     top: 50%;
     left: 50%;
-	padding: 1vw;
     transform: translate(-50%, -50%);
     text-align: center;
 }
@@ -291,7 +296,7 @@ h5 {
 }
 
 .box2 {
-	background-color: rgba(95, 92, 92, 0.336);
+	background-color: rgba(48, 46, 46, 0.336);
 }
 
 .box3 {
@@ -328,6 +333,12 @@ h5 {
         font-size: 3vh;
         text-align: center;
     }
+
+	#title h2 {
+		font-size: 3.4vh !important;
+		line-height: 3.4vh !important;
+		letter-spacing: 3px !important;
+	}
 
 	h2 {
 		font-size:  3.4vh;
@@ -416,10 +427,12 @@ h5 {
     #error-popup, #status-popup {
         width: 75vw;
         height: 15vh;
+        border: 5px solid white;
     }
 
     #error-popup p, #status-popup p {
-        font-size: 3vw !important;
+        font-size: 4vw !important;
+        line-height: 4.4vw !important;
     }
 
 	h1 {
