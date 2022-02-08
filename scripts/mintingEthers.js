@@ -42,7 +42,7 @@ const MAX_MINT = 6;
 const MAX_MINT_WL = 3;
 const MAX_SUPPLY = 10000;
 const priceWei = "100000000000000000";
-const priceEth = .085
+const priceEth = .1
 const openseaLink = "";
 const looksrareLink = "";
 

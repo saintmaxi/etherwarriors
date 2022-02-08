@@ -111,7 +111,7 @@ const getStakedWarriorsEnum = async()=>{
 const getWarriorsOwned = async() => {
     let userAddress = await getAddress();
     // let ownedWarriors = await warriors.walletofNFT(userAddress); // get list
-    let ownedWarriors = [6,7,8,9] //remove after unstaked function list
+    let ownedWarriors = [1,2,3,4,5,6,7,8,9] //remove after unstaked function list
     return [...ownedWarriors].sort((a, b) => a - b);
 }
 
