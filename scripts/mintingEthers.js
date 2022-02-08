@@ -55,6 +55,7 @@ if (window.ethereum == undefined) {
 const provider = new ethers.providers.Web3Provider(window.ethereum,"any");
 const signer = provider.getSigner();
 const warriors = new ethers.Contract(warriorsAddress, warriorsAbi(), signer);
+const raid = new ethers.Contract(raidAddress, raidAbi(), signer);
 
 const merkleProofSourceUrl = "https://api.nonfungiblecdn.com/cyberturtles/merkleproofs";
 
@@ -83,10 +84,10 @@ const getChainId = async()=>{
     return await signer.getChainId()
 };
 
-const maxInt = 115792089237316195423570985008687907853269984665640564039457584007913129639935;
+const maxInt = "115792089237316195423570985008687907853269984665640564039457584007913129639935";
 
 const approveRaidToWarriors = async() => {
-    await raid.approve(warriorsAddress, maxInt).then ( async (tx_) => {
+    await raid.approve(warriorsAddress, maxInt).then (async(tx_) => {
         await waitForTransaction(tx_);
     });
 };
@@ -94,12 +95,14 @@ const approveRaidToWarriors = async() => {
 const checkRaidApproval = async() => {
     const userAddress = await getAddress();
     if ((await raid.allowance(userAddress, warriorsAddress)) >= maxInt) {
-        $("#raid-to-warriors-approval").addClass("hidden");
-        // hide mint tools
+        $("#raid-approval").addClass("hidden");
+        $("#mint-button").removeClass("hidden");
+        $("#quantity-controls").removeClass("hidden");
     }
     else {
-        $("#raid-to-warriors-approval").removeClass("hidden");
-        //show mint tools
+        $("#raid-approval").removeClass("hidden");
+        $("#mint-button").addClass("hidden");
+        $("#quantity-controls").addClass("hidden");
     }
 };
 
@@ -316,6 +319,9 @@ const updateMintInfo = async() => {
         $("#mint-button").remove();
         $("#mint-n-stake-button").remove();
         $("#quantity-controls").remove();
+    }
+    else if (minted >= 5000) {
+        await checkRaidApproval();
     }
 }
 

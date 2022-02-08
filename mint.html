@@ -96,7 +96,13 @@
                   <h2 id="totalMintPrice" class="heading"><span id="current-cost">???</span></h2>
                </div>
                <div>
-                  <p class="main-paragraph" id="quantity-controls">
+                  <p class="hidden" id="raid-approval" style="text-align: center;">
+                     <br>
+                     The last 5000 Ether Warriors are only mintable with $RAID. To mint with $RAID, first set approval for Warriors contract to spend your $RAID.
+                     <br><br>
+                     <button class="button" onclick="approveRaidToWarriors()">APPROVE</button>
+                  </p>
+                  <p id="quantity-controls">
                      <button class="increment-button" id="mint-minus" onclick="decrementClaim();updatePrice();">⊖</button>
                      <span id="number-to-mint">1</span>
                      <button class="increment-button" id="mint-plus" onclick="incrementClaim();updatePrice();">⊕</button>
