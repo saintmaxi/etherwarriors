@@ -98,8 +98,15 @@ const updateCurrentChain = async() => {
 
 const getWarriorsEnum = async()=>{
     let userAddress = await getAddress();
-    let ownedWarriorsCount = await warriors.balanceOf(userAddress); //get unstaked?
-    return ownedWarriorsCount;
+    let totalWarriors = await warriors.balanceOf(userAddress);
+    let ownedWarriors = [];
+    for (let i = 0; i < totalWarriors; i++) {
+        let id = Number(await warriors.tokenOfOwnerByIndex(userAddress, i));
+        if (!(await raid.isStaked(id))) {
+            ownedWarriors.push(id);
+        }
+    }
+    return ownedWarriors.length;
 };
 
 const getStakedWarriorsEnum = async()=>{
@@ -110,8 +117,14 @@ const getStakedWarriorsEnum = async()=>{
 
 const getWarriorsOwned = async() => {
     let userAddress = await getAddress();
-    // let ownedWarriors = await warriors.walletofNFT(userAddress); // get list
-    let ownedWarriors = [1,2,3,4,5,6,7,8,9] //remove after unstaked function list
+    let totalWarriors = await warriors.balanceOf(userAddress);
+    let ownedWarriors = [];
+    for (let i = 0; i < totalWarriors; i++) {
+        let id = Number(await warriors.tokenOfOwnerByIndex(userAddress, i));
+        if (!(await raid.isStaked(id))) {
+            ownedWarriors.push(id);
+        }
+    }
     return [...ownedWarriors].sort((a, b) => a - b);
 }
 
@@ -163,6 +176,7 @@ const stakeWarriorsToRaid = async()=>{
             selectedForStaking = new Set();
             $("#selected-for-staking").text("None");
             $("#your-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
+            $("#your-staked-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         });
     }
@@ -182,6 +196,7 @@ const stakeAll = async()=>{
             selectedForStaking = new Set();
             $("#selected-for-staking").text("None");
             $("#your-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
+            $("#your-staked-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         });
     }
@@ -203,6 +218,7 @@ const unstakeByIds = async()=>{
             }
             selectedForUnstaking = new Set();
             $("#selected-for-unstaking").text("None");
+            $("#your-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             $("#your-staked-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         }); 
@@ -222,6 +238,7 @@ const unstakeAll = async()=>{
             }
             selectedForUnstaking = new Set();
             $("#selected-for-unstaking").text("None");
+            $("#your-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             $("#your-staked-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         }); 
