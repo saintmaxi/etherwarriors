@@ -12,6 +12,10 @@ h2 {
 	color: #F5CD03 !important;
 }
 
+svg#logo {
+    margin: 0 !important;
+}
+
 #raid-balances {
     text-align: center;
     display: -webkit-box;
@@ -70,7 +74,7 @@ h2 {
 #available-warrior-images, #staked-warrior-images {
     border: solid .5vw white;
     border-radius: 2px;
-    min-height: 20vh;
+    min-height: 30vh;
     text-align: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -101,13 +105,14 @@ h2 {
     transition: transform ease 300ms;
 }
 
-.your-warrior img {
+.your-warrior svg {
     margin: 5px;
 }
 
 .warrior-id, .raid-earned {
-    color: black;
+    color: white;
     margin-bottom: 0px;
+    text-align: center;
   }
   
 .your-warrior:hover {
@@ -115,31 +120,31 @@ h2 {
 }
 
 .your-warrior:hover .warrior-id, .your-warrior:hover .raid-earned {
-    color: #629658 !important;
-  }
+    color: #21D5A7 !important;
+}
 
 
-  .your-warrior:hover img {
-    border: solid .25vw #629658;
+.your-warrior:hover svg {
+    border: solid .25vw #21D5A7;
     cursor: pointer;
-  }
+}
   
-  .active img {
-    border: solid .25vw #629658;
-  }
+.active svg {
+    border: solid .25vw #21D5A7;
+}
 
-  .active img, .active p{
-    color: #629658 !important;
-  }
+.active svg, .active p{
+    color: #21D5A7 !important;
+}
 
-  .selected {
+.selected {
     color: white;
-  }
+}
 
-  .active img, .active p{
-    border-color: #629658;
-    color: #629658 !important;
-  }
+.active svg, .active p{
+    border-color: #21D5A7;
+    color: #21D5A7 !important;
+}
 
 .warrior-id {
     text-align: center;
@@ -152,25 +157,25 @@ h2 {
     -webkit-animation-delay: 0.0s;
     animation: dot 1.3s infinite;
     animation-delay: 0.0s;
-  }
+}
   
-  .two {
+.two {
     opacity: 0;
     -webkit-animation: dot 1.3s infinite;
     -webkit-animation-delay: 0.2s;
     animation: dot 1.3s infinite;
     animation-delay: 0.2s;
-  }
+}
   
-  .three {
+.three {
     opacity: 0;
     -webkit-animation: dot 1.3s infinite;
     -webkit-animation-delay: 0.3s;
     animation: dot 1.3s infinite;
     animation-delay: 0.3s;
-  }
+}
   
-  @-webkit-keyframes dot {
+@-webkit-keyframes dot {
     0% {
         opacity: 0;
     }
@@ -180,9 +185,9 @@ h2 {
     100% {
         opacity: 1;
     }
-  }
+}
   
-  @keyframes dot {
+@keyframes dot {
     0% {
         opacity: 0;
     }
@@ -192,7 +197,7 @@ h2 {
     100% {
         opacity: 1;
     }
-  }
+}
 
 @media screen and (max-width: 991px) {
 
@@ -284,9 +289,18 @@ h2 {
     .warrior-id, .raid-earned {
           font-size: 3vh;
           line-height: 3.2vh;
-      }
+    }
 
-      .active img {
-        border: solid 3px #629658;
-      }
+    .active svg {
+        border: solid 3px #21D5A7;
+    }
+
+    .your-warrior:hover svg {
+        border: solid 3px #21D5A7;
+        cursor: pointer;
+    }
+      
+    .active svg {
+        border: solid 3px #21D5A7;
+    }
 }

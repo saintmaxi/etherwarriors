@@ -99,24 +99,25 @@ const updateCurrentChain = async() => {
 const getWarriorsEnum = async()=>{
     let userAddress = await getAddress();
     let ownedWarriorsCount = await warriors.balanceOf(userAddress); //get unstaked?
-    return ownedDragonsCount;
+    return ownedWarriorsCount;
 };
 
 const getStakedWarriorsEnum = async()=>{
     let userAddress = await getAddress();
-    let ownedStakedWarriorsCount = await warriors.balanceOf(userAddress); // get staked?
+    let ownedStakedWarriorsCount = await raid.stakedWarriorsQuantity(userAddress);
     return ownedStakedWarriorsCount;
 };
 
-const getWarriorssOwned = async() => {
+const getWarriorsOwned = async() => {
     let userAddress = await getAddress();
-    let ownedWarriors = await warriors.walletofNFT(userAddress); // get list
+    // let ownedWarriors = await warriors.walletofNFT(userAddress); // get list
+    let ownedWarriors = [6,7,8,9] //remove after unstaked function list
     return [...ownedWarriors].sort((a, b) => a - b);
 }
 
 const getStakedWarriorsOwned = async() => {
     let userAddress = await getAddress();
-    let owneStakedWarriors = await warriors.walletofNFT(userAddress); // get list
+    let ownedStakedWarriors = await raid.warriorsStaked(userAddress); 
     return [...ownedStakedWarriors].sort((a, b) => a - b);
 }
 
@@ -127,18 +128,17 @@ const getRaidBalance = async()=>{
 
 const getPendingRaidBalance = async()=>{
     let userAddress = await getAddress();
-    const pendingRaid = await raid.getPendingTokensOfAddress(userAddress); //get pending
-    $("#claimable-raid").text(`${Number(formatEther(pendingShell)).toFixed(2)}`);
+    const pendingRaid = await raid.getTotalRewardsForUser(userAddress);
+    $("#claimable-raid").text(`${Number(formatEther(pendingRaid)).toFixed(2)}`);
 };
 
 const claimRaid = async()=>{
     let userAddress = await getAddress();
-    if (await raid.getPendingTokensOfAddress(userAddress) == 0) { //get pending
+    if (await raid.getTotalRewardsForUser(userAddress) == 0) {
         await displayErrorMessage('You have no $RAID to claim!')
     }
     else {
-        let ownedStakedWarriors = await warriors.walletOfOwnerStaked(userAddress); //get list
-        await raid.claim(ownedStakedWarriors).then( async(tx_) => {
+        await raid.claimAllRewards().then( async(tx_) => {
             await waitForTransaction(tx_);
         });
     }
@@ -156,32 +156,32 @@ const stakeWarriorsToRaid = async()=>{
     else {
         const warriorsArray = Array.from(selectedForStaking);
     
-        await raid.stakeTurtles(warriorsArray).then( async(tx_) => { // staking function
+        await raid.stakeWarriorsByIds(warriorsArray).then( async(tx_) => {
             for (let i = 0; i < warriorsArray.length; i++) {
                 $(`#warrior-${warriorsArray[i]}`).remove();
             }
             selectedForStaking = new Set();
             $("#selected-for-staking").text("None");
-            $("#your-warriors").html(`Your Available Warriors (<span class="one">.</span><span class="two">.</span><span class="three">.</span>)`);
+            $("#your-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         });
     }
 };
 
 const stakeAll = async()=>{
-    if ((await getTurtlesEnum()) == 0) {
+    if ((await getWarriorsEnum()) == 0) {
         displayErrorMessage("No available warriors to stake!")
     }
     else {
         const warriorsArray = await getWarriorsOwned();
     
-        await raid.stakeTurtles(turtlesArray).then( async(tx_) => { // staking function
-            for (let i = 0; i < turtlesArray.length; i++) {
+        await raid.stakeWarriorsByIds(warriorsArray).then( async(tx_) => {
+            for (let i = 0; i < warriorsArray.length; i++) {
                 $(`#warrior-${warriorsArray[i]}`).remove();
             }
             selectedForStaking = new Set();
             $("#selected-for-staking").text("None");
-            $("#your-warriors").html(`Your Available Warriors (<span class="one">.</span><span class="two">.</span><span class="three">.</span>)`);
+            $("#your-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         });
     }
@@ -193,18 +193,17 @@ const unstakeByIds = async()=>{
         displayErrorMessage("No warriors staked!")
     }
     else if (selectedForUnstaking.size == 0) {
-        displayErrorMessage("Select at least 1 warriors to unstake!")
+        displayErrorMessage("Select at least 1 warrior to unstake!")
     }
     else {
         const warriorsArray = Array.from(selectedForUnstaking);
-        await raid.unstakeTurtles(warriorsArray).then( async(tx_) => { // unstake function
+        await raid.unstakeWarriorsByIds(warriorsArray).then( async(tx_) => {
             for (let i = 0; i < warriorsArray.length; i++) {
                 $(`#warrior-${warriorsArray[i]}`).remove();
             }
             selectedForUnstaking = new Set();
             $("#selected-for-unstaking").text("None");
-            $("#raid-to-claim").text(`$RAID to Claim: 0`);
-            $("#your-staked-warriors").html(`Your Staked Warriors (<span class="one">.</span><span class="two">.</span><span class="three">.</span>)`);
+            $("#your-staked-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         }); 
     }
@@ -217,14 +216,13 @@ const unstakeAll = async()=>{
     }
     else {
         const warriorsArray = await getStakedWarriorsOwned();
-        await raid.unstakeTurtles(turtlesArray).then( async(tx_) => { // unstake function
+        await raid.unstakeAll().then( async(tx_) => {
             for (let i = 0; i < warriorsArray.length; i++) {
                 $(`#warrior-${warriorsArray[i]}`).remove();
             }
             selectedForUnstaking = new Set();
             $("#selected-for-unstaking").text("None");
-            $("#raid-to-claim").text(`$SHELL to Claim: 0`);
-            $("#your-staked-warriors").html(`Your Staked Warriors (<span class="one">.</span><span class="two">.</span><span class="three">.</span>)`);
+            $("#your-staked-warriors-num").html(`<span class="one">.</span><span class="two">.</span><span class="three">.</span>`);
             await waitForTransaction(tx_);
         }); 
     }
@@ -253,8 +251,11 @@ const getWarriorImages = async()=>{
             if (selectedForStaking.has(Number(warriorId))) {
                 active = "active";
             }
-            // add img retrieval and decoding from contract, or just have pngs stored somewhere
-            batchFakeJSX += `<div id="warrior-${warriorId}" class="your-warrior ${active}"><img onclick="selectForStaking(${warriorId})" src="${baseImageURI}${turtleId}.png"><p class="warrior-id">#${warriorId}</p></div>`
+            const uri = await warriors.tokenURI(warriorId);
+            const decodedUri = JSON.parse(atob(uri.replace("data:application/json;base64,", "")))
+            let svg = atob(decodedUri.image.replace("data:image/svg+xml;base64,", ""));
+            svg = svg.replace("<svg ", `<svg onclick="selectForStaking(${warriorId})" `);
+            batchFakeJSX += `<div id="warrior-${warriorId}" class="your-warrior ${active}">${svg}<p class="warrior-id">#${warriorId}</p></div>`
             // batchFakeJSX += `<div id="warrior-${warriorId}" class="your-warrior ${active}"><img onclick="selectForStaking(${warriorId})" src="${baseImageURI}"><p class="warrior-id">#${warriorId}</p></div>`            
         };
         $("#available-warrior-images").empty();
@@ -276,9 +277,13 @@ const getWarriorImages = async()=>{
             if (selectedForUnstaking.has(Number(warriorId))) {
                 active = "active";
             }
-            let raidEarned = Number(formatEther(await raid.getPendingTokens(warriorId))).toFixed(2); //get pending
+            const uri = await warriors.tokenURI(warriorId);
+            const decodedUri = JSON.parse(atob(uri.replace("data:application/json;base64,", "")))
+            let svg = atob(decodedUri.image.replace("data:image/svg+xml;base64,", ""));
+            svg = svg.replace("<svg ", `<svg onclick="selectForUnstaking(${warriorId})" `);
+            let raidEarned = Number(formatEther(await raid.getRaidOwedToThisWarrior(warriorId))).toFixed(2);
             // batchFakeJSX += `<div id="warrior-${warriorId}" class="your-warrior ${active}"><img onclick="selectForUnstaking(${warriorId})" src="${baseImageURI}${warriorId}.png"><p class="warrior-id">#${warriorId}</p><p class="raid-earned"><span id="raid-earned-${warriorId}">${raidEarned}</span></p></div>`
-            batchFakeJSX += `<div id="warrior-${warriorId}" class="your-warrior ${active}"><img onclick="selectForUnstaking(${warriorId})" src="${baseImageURI}"><p class="warrior-id">#${warriorId}</p><p class="raid-earned"><span id="raid-earned-${warriorId}">${raidEarned}</span></p></div>`        
+            batchFakeJSX += `<div id="warrior-${warriorId}" class="your-warrior ${active}">${svg}<p class="warrior-id">#${warriorId}</p><p class="raid-earned"><span id="raid-earned-${warriorId}">${raidEarned}</span></p></div>`        
         };
         $("#staked-warrior-images").empty();
         $("#staked-warrior-images").append(batchFakeJSX);
@@ -287,7 +292,7 @@ const getWarriorImages = async()=>{
 
 const getRaidEarnedByID = async(id) => {
     try {
-        return Number(formatEther(await raid.getPendingTokens(id))).toFixed(2); //get pending tokens
+        return Number(formatEther(await raid.getRaidOwedToThisWarrior(id))).toFixed(2);
     }
     catch {
         console.log('Metamask throws extra error. Token reward lookup was successful.')
@@ -299,7 +304,7 @@ const updateRaidEarned = async() => {
     let totalEarned = 0;
     for (let i = 0; i < currentlyStaked.length; i++) {
         let warriorId = Number(currentlyStaked[i]);
-        let raidEarnedByID = await getShellEarnedByID(warriorId);
+        let raidEarnedByID = await getRaidEarnedByID(warriorId);
         $(`#raid-earned-${warriorId}`).text(raidEarnedByID);
         if (selectedForUnstaking.has(warriorId)) {
             totalEarned += Number(raidEarnedByID);
@@ -360,11 +365,11 @@ var selectedForUnstaking = new Set();
 async function selectForStaking(id) {
     if (!selectedForStaking.has(id)) {
         selectedForStaking.add(id);
-        $(`#turtle-${id}`).addClass("active");
+        $(`#warrior-${id}`).addClass("active");
     }
     else {
         selectedForStaking.delete(id);
-        $(`#turtle-${id}`).removeClass("active");
+        $(`#warrior-${id}`).removeClass("active");
     }
     if (selectedForStaking.size == 0) {
         $("#selected-for-staking").text("None");
@@ -378,23 +383,23 @@ async function selectForStaking(id) {
 async function selectForUnstaking(id) {
     if (!selectedForUnstaking.has(id)) {
         selectedForUnstaking.add(id);
-        $(`#turtle-${id}`).addClass("active");
+        $(`#warrior-${id}`).addClass("active");
     }
     else {
         selectedForUnstaking.delete(id);
-        $(`#turtle-${id}`).removeClass("active");
+        $(`#warrior-${id}`).removeClass("active");
     }
     if (selectedForUnstaking.size == 0) {
         $("#selected-for-unstaking").text("None");
-        $("#shell-to-claim").text(`$SHELL to Claim: 0`);
+        $("#raid-to-claim").text(`$RAID to Claim: 0`);
     }
     else {
         let selectedForUnstakingArray = Array.from(selectedForUnstaking).sort((a, b) => a - b);
-        let shellToClaim = 0;
+        let raidToClaim = 0;
         for (let i = 0; i < selectedForUnstakingArray.length; i++) {
-            shellToClaim += Number(await getShellEarnedByID(selectedForUnstakingArray[i]));
+            raidToClaim += Number(await getRaidEarnedByID(selectedForUnstakingArray[i]));
         }
-        $("#shell-to-claim").text(`$SHELL to Claim: ${shellToClaim.toFixed(2)}`);
+        $("#raid-to-claim").text(`$RAID to Claim: ${raidToClaim.toFixed(2)}`);
         let selectedString = `${selectedForUnstakingArray.join(' ')}`;
         $("#selected-for-unstaking").text(selectedString);
     }
@@ -459,7 +464,8 @@ async function endLoading(tx, txStatus) {
 
 setInterval(async()=>{
     await updateInfo();
-    await getPendingScaleBalance();
+    await updateRaidEarned();
+    await getPendingRaidBalance();
 }, 5000)
 
 const updateInfo = async () => {
