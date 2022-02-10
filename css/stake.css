@@ -1,3 +1,7 @@
+:root {
+    --active-color: #b758ff;
+  }
+
 #raid-description {
     margin:auto;
     text-align: center;
@@ -9,7 +13,8 @@
 
 h2 {
     letter-spacing: 1px;
-	color: #F5CD03 !important;
+	/* color: #F5CD03 !important; */
+    color: #b89326;
 }
 
 svg#logo {
@@ -121,16 +126,16 @@ svg#logo {
 }
 
 .your-warrior:hover .warrior-id, .your-warrior:hover .raid-earned {
-    color: #21D5A7 !important;
+    color: var(--active-color) !important;
 }
 
 .your-warrior:hover svg {
-    border: solid .25vw #21D5A7;
+    border: solid .25vw var(--active-color);
     cursor: pointer;
 }
   
 .active svg {
-    border: solid .25vw #21D5A7;
+    border: solid .25vw var(--active-color);
 }
 
 .active svg, .active p{
@@ -142,8 +147,8 @@ svg#logo {
 }
 
 .active svg, .active p{
-    border-color: #21D5A7;
-    color: #21D5A7 !important;
+    border-color: var(--active-color);
+    color: var(--active-color) !important;
 }
 
 .warrior-id {
