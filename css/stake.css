@@ -206,10 +206,6 @@ svg#logo {
 
 @media screen and (max-width: 991px) {
 
-    .no-warriors-msg {
-        font-size: 1.5vh !important;
-    }
-
     #raid-description {
         margin:auto;
         text-align: center;
