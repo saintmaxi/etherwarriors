@@ -40,10 +40,10 @@
    <link href="https://pbs.twimg.com/profile_images/1482163745799430147/PQRJzF7p_400x400.png" rel="apple-touch-icon">
 </head>
 
-<body class="body" style="font-family: 'VT323'">
+<body class="body">
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000">
 		<a class="navbar-brand" href="index.html" style="padding: 1rem; font-size: 2rem">
-			<img src="images/logo.png" style="width: 3rem; height: 3rem">
+			<img src="images/ew-blue.svg" style="width: 3rem; height: 3rem">
 			ETHER WARRIORS
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +93,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
 					<a class="nav-link" style="padding: 0!important">
-						<button id="account" class="button d-flex align-items-center" data-toggle="modal" style="border: none; padding: 0.5rem;" onclick="connect()">
+						<button id="account" class="btn btn-primary d-flex align-items-center" data-toggle="modal" style="border: none; padding: 0.5rem;" onclick="connect()">
 							<i class="fas fa-circle" style="font-size: 1rem; color: red"></i>
 							&nbsp;Connect
 						</button>
@@ -105,23 +105,23 @@
    <div class="section">
       <div id="raid-balances">
          <div id="your-raid-container" class="box raid-balance-container">
-            <h2>Your $RAID</h2>
+            <h2 class="text-primary">Your $RAID</h2>
             <h2 style="color:white !important"><span id="your-raid"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span></h2>
-            <button class="button" onclick="importRaidToWallet()">TRACK $RAID IN WALLET </button>
+            <button class="btn btn-primary" onclick="importRaidToWallet()">TRACK $RAID IN WALLET </button>
          </div>
          <div class="box raid-balance-container"> 
-            <h2>Claimable $RAID</h2>
+            <h2 class="text-primary">Claimable $RAID</h2>
             <h2 style="color:white !important"><span id="claimable-raid"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span></h2>
-            <button class=" button" onclick="claimRaid()">CLAIM $RAID </button>
+            <button class="btn btn-primary" onclick="claimRaid()">CLAIM $RAID </button>
          </div>
       </div>
    </div>
    <div id="your-warrior-section" class="container box">
       <div class="staking-section">
-         <h2>UNSTAKED WARRIORS (<span id="your-warriors-num"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span>)</h2>
+         <h2 class="text-primary">UNSTAKED WARRIORS (<span id="your-warriors-num"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span>)</h2>
          <div class="stake-buttons">
-           <button id="stakeSelectedButton" href="#" class="button" onclick="stakeWarriorsToRaid()">STAKE SELECTED</button>
-           <button id="stakeAllButton" href="#" class="button" onclick="stakeAll()">STAKE ALL</button>
+           <button id="stakeSelectedButton" href="#" class="btn btn-primary" onclick="stakeWarriorsToRaid()">STAKE SELECTED</button>
+           <button id="stakeAllButton" href="#" class="btn btn-primary" onclick="stakeAll()">STAKE ALL</button>
          </div>
          <div style="text-align: center;">
            <h3 class="selected">Selected:</h3>
@@ -132,10 +132,10 @@
          </div>
       </div>
       <div id="staked-warriors-wrapper" class="staking-section">
-         <h2>STAKED WARRIORS (<span id="your-staked-warriors-num"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span>)</h2>
+         <h2 class="text-primary">STAKED WARRIORS (<span id="your-staked-warriors-num"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span>)</h2>
               <div class="stake-buttons">
-                <button id="unstakeSelectedButton" href="#" class="button" onclick="unstakeByIds()">UNSTAKE SELECTED</button>
-                <button id="unstakeallButton" href="#" class="button" onclick="unstakeAll()">UNSTAKE ALL</button>
+                <button id="unstakeSelectedButton" href="#" class="btn btn-primary" onclick="unstakeByIds()">UNSTAKE SELECTED</button>
+                <button id="unstakeallButton" href="#" class="btn btn-primary" onclick="unstakeAll()">UNSTAKE ALL</button>
               </div>
               <div style="text-align: center;">
                 <h3 class="selected">Selected:</h3>
@@ -146,7 +146,7 @@
          </div>
       </div>
    </div>
-   <img src="images/double-bubble-dark.png" loading="lazy" alt="" class="banner-img fixed-banner">
+<!--   <img src="images/double-bubble-dark.png" loading="lazy" alt="" class="banner-img fixed-banner">-->
 
       <div id="pending-transactions"></div>
       <script

@@ -40,10 +40,10 @@
    <link href="https://pbs.twimg.com/profile_images/1482163745799430147/PQRJzF7p_400x400.png" rel="apple-touch-icon">
 </head>
 
-<body class="body" style="font-family: 'VT323'">
+<body class="body">
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000">
 		<a class="navbar-brand" href="index.html" style="padding: 1rem; font-size: 2rem">
-			<img src="images/logo.png" style="width: 3rem; height: 3rem">
+			<img src="images/ew-blue.svg" style="width: 3rem; height: 3rem">
 			ETHER WARRIORS
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +93,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
 					<a class="nav-link" style="padding: 0!important">
-						<button id="account" class="button d-flex align-items-center" data-toggle="modal" style="border: none; padding: 0.5rem;" onclick="connect()">
+						<button id="account" class="btn btn-primary d-flex align-items-center" data-toggle="modal" style="border: none; padding: 0.5rem;" onclick="connect()">
 							<i class="fas fa-circle" style="font-size: 1rem; color: red"></i>
 							&nbsp;Connect
 						</button>
@@ -120,14 +120,14 @@
                      <br>
                      The last 5000 Ether Warriors are only mintable with $RAID. To mint with $RAID, first set approval for Warriors contract to spend your $RAID.
                      <br><br>
-                     <button class="button" onclick="approveRaidToWarriors()">APPROVE</button>
+                     <button class="btn btn-primary" onclick="approveRaidToWarriors()">APPROVE</button>
                   </p>
                   <p id="quantity-controls">
 					  <ion-icon id="mint-minus" class="increment-button" onclick="decrementClaim(); updatePrice()" name="remove-circle-outline"></ion-icon>
 					  <span id="number-to-mint">1</span>
 					  <ion-icon id="mint-plus" class="increment-button" onclick="incrementClaim();updatePrice()" name="add-circle-outline"></ion-icon>
                      <br><br>
-                     <button class="button" id="max-button" onclick="setMaxMint()">MAX</button>
+                     <button class="btn btn-primary" id="max-button" onclick="setMaxMint()">MAX</button>
                   </p>
                   <div style="text-align: center;">
                      <h2 id="sold-out"></h2>
@@ -138,7 +138,7 @@
                </div>
             </div>
             <div id="mint-buttons" style="text-align: center;">
-               <button id="mint-button" class="button" onclick="mint()">MINT</button>
+               <button id="mint-button" class="btn btn-primary" onclick="mint()">MINT</button>
                <!-- <button id="mint-n-stake-button" class="button" onclick="mint(true)">MINT AND STAKE</button> -->
             </div>
          </div>
@@ -147,7 +147,7 @@
          </div>
          <img src="images/random-3.gif" class="hide-on-mobile" style="width: 27%;margin-left:2%">
       </div>
-   <img src="images/double-bubble-dark.png" loading="lazy" alt="" class="banner-img fixed-banner">
+<!--   <img src="images/double-bubble-dark.png" loading="lazy" alt="" class="banner-img fixed-banner">-->
 
       <div id="pending-transactions"></div>
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
