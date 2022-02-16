@@ -136,7 +136,7 @@
 /* Mint loading gif */
 
 #loading-popup {
-    border: solid .5vw white;
+    border: solid .3vw white;
 	background-color: black;
     padding:5vw;
     z-index: 99999;

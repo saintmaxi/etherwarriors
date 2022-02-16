@@ -54,6 +54,7 @@ p {
 	/*position: absolute;*/
 	display: inline;
 	text-align: center;
+	font-size: 1.25rem;
     /*top: 1vw;*/
     /*right: 1vw;*/
 	/*font-size: 1.3vw;*/
@@ -212,7 +213,7 @@ h5 {
     text-decoration: none;
     height: 5%;
 	background-color: black;
-    border: solid white .3em;
+    border: solid white .3vw;
     color: white;
     font-size: 1.2vw;
     line-height: 1.5vw;
@@ -233,7 +234,7 @@ h5 {
     transform: translate(-50%, -50%);
     width: 53vw;
     height: 35vh;
-    border: solid .5vw white;
+    border: solid .3vw white;
     border-radius: .2em;
     text-align: center;
     box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
@@ -291,9 +292,9 @@ h5 {
 .box {
 	border-style: solid;
 	border-color: white;
-    border-bottom: .5vw solid white;
+    border-bottom: .3vw solid white;
 	border-radius: 2px;
-	border-width: .5vw;
+	border-width: .3vw;
 	padding: 20px;
 	background-color: black;
 	/* background-color: rgba(95, 92, 92, 0.336); */
