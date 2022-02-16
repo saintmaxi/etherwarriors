@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=VT323&display=swap');
+
 :root {
     --main-bg-color: black;
-  }
+}
 
 @keyframes blinker {
     50% {
@@ -8,8 +10,18 @@
     }
 }
 
-/* start header/navbar styling */
+body {
+    font-family: "VT323", sans-serif;
+}
 
+.navbar-brand {
+    font-size: 24px;
+}
+.nav-item {
+    font-size: 20px;
+}
+
+/* start header/navbar styling */
 #top  {
     display: flex;
     flex-direction: row;
@@ -19,7 +31,7 @@
 }
 
 #header, #title-section {
-    margin: 10px 0 10px 0%;
+    /*margin: 10px 0 10px 0%;*/
     padding: 0;
 }
 
@@ -28,15 +40,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 45%;
-    border-right: .25vw solid white;
     font-size: 3vw;
     text-align: center;
 }
 
 #header {
     width: 40%;
-    border-left: .25vw solid white;
+    /*border-left: .25vw solid white;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -47,24 +57,20 @@
 #socials {
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: center;
     justify-content: center;
-    width: 15%;
+    width: 20%;
     padding: .5%;
     background-color: var(--main-bg-color);
 }
 
 #socials a {
-    width: 17%;
-    margin: 1%;
+    width: 9rem;
+    margin-right: 1rem;
 }
 
 #socials a:hover {
     opacity: .8;
-}
-
-#logo-img {
-    width: 20%
 }
 
 #logo-img:hover {
@@ -72,15 +78,16 @@
 }
 
 #title {
-    width: 80%;
+    width: 30%;
     letter-spacing: 5px;
 }
 
 .header-menu {
 	font-size: 2vw;
     letter-spacing: 3px;
-    width: 20%;
+    width: 10%;
     text-align: center;
+    margin-right: 1rem
 }
 
 /* end header/navbar styling */
@@ -172,7 +179,7 @@
     #title-section {
         width: 100%;
         border-right: none;
-        border-bottom: 5px solid white;
+        /*border-bottom: 5px solid white;*/
         font-size: 4vh;
         background-color: var(--main-bg-color);
         margin-top: 0;
@@ -180,7 +187,7 @@
     }
 
     #logo-img {
-        width: 20%
+        /*width: 50%*/
     }
     
     #title {
@@ -210,7 +217,7 @@
         text-align: center;
         padding-top: 10px;
         padding-bottom: 10px;
-        border-bottom: 5px solid white;
+        /*border-bottom: 5px solid white;*/
     }
 
     /* end header/navbar styling */
@@ -237,7 +244,7 @@
 
 	.team-member {
 		width: 95%;
-		margin: 0%;
+		margin: 0;
         padding-bottom: 4%;
 	}
 

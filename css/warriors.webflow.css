@@ -1,18 +1,19 @@
-@font-face {  
-	font-family: 'Pixel';
-	src: URL('../css/Connection-arMJ.otf') format('truetype');
-}  
+/*@font-face {*/
+/*	font-family: 'Pixel';*/
+/*	src: URL('../css/Connection-arMJ.otf') format('truetype');*/
+/*}*/
 
-@font-face {  
-	font-family: 'Block';
-	src: URL('../css/block.ttf') format('truetype');
-}  
+/*@font-face {  */
+/*	font-family: 'Block';*/
+/*	src: URL('../css/block.ttf') format('truetype');*/
+/*}  */
 
 html, body {
 	overscroll-behavior: none;
 	margin: 0;
 	width: 100%;
 	height: 100%;
+	font-family: "VT323", sans-serif;
 }
 
 .hidden {
@@ -24,7 +25,7 @@ h1, h2 {
 }
 
 h1 {
-	font-family: "Block";
+	/*font-family: "Block";*/
 	/* color: #F5CD03 !important; */
 	color: #b89326;
 
@@ -43,7 +44,7 @@ h3 {
 }
 
 p {
-	font-family: "Pixel";
+	font-family: "Segoe UI Light", sans-serif;
 	text-align: justify;
 	font-size: 1.4vw !important;
 	line-height: 1.7vw !important;
@@ -51,12 +52,12 @@ p {
 }
 
 #account {
-	position: absolute;
+	/*position: absolute;*/
 	display: inline;
 	text-align: center;
-    top: 1vw;
-    right: 1vw;
-	font-size: 1.3vw;
+    /*top: 1vw;*/
+    /*right: 1vw;*/
+	/*font-size: 1.3vw;*/
 	letter-spacing: 3px;
   }
 
@@ -64,7 +65,7 @@ p {
 .body {
 	/* background-image: url(../images/bg.png); */
 	background-color: black;
-	font-family: 'Block', sans-serif;
+	/*font-family: 'Block', sans-serif;*/
 	background-size: auto;
 	background-repeat: repeat;
 	color: white;
@@ -79,7 +80,7 @@ p {
 	font-size: 33px;
 	line-height: 33px;
 	text-align: left;
-	font-family: 'Pixel';
+	/*font-family: 'Pixel';*/
 }
 
 .hide-on-desktop {
@@ -148,10 +149,10 @@ p {
 	/* background-color: #D5A61E; */
 	background-color: #b89326;
 	color: white;
-	font-size: 1.7vw;
+	font-size: 1.25rem;
 	padding: .5vw;
-	font-family: 'Block';
-    border: .5vw solid white;
+	/*font-family: 'Block';*/
+    /*border: .5vw solid white;*/
 	border-radius: 2px;
 }
 
@@ -283,7 +284,7 @@ h5 {
 
 .fixed-banner{
 	position:fixed;
-    bottom:0px;
+    bottom:0;
     z-index: -1;
 }
 
@@ -367,13 +368,12 @@ h5 {
 		padding: 0 !important;
 	}
 
-	.button {
-		font-size: 2.3vh;
-		line-height: 2.3vh ;	
-		padding: 5px;
-        border: 5px solid white;
-		min-height: 10vh !important;
-	}
+	/*.button {*/
+		/*font-size: 2.3vh;*/
+		/*line-height: 2.3vh;*/
+		/*padding: 5px;*/
+		/*min-height: 10vh !important;*/
+	/*}*/
 
 	p {
 		font-size: 2.8vh !important;
@@ -390,9 +390,9 @@ h5 {
 		display: block !important;
 	}
 
-	#mobile-account {
-		width:90%;
-	  }
+	/*#mobile-account {*/
+	/*	width:90%;*/
+	/*  }*/
 
 	.header {
 		padding-top: 10px;
