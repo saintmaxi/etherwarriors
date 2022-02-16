@@ -123,9 +123,9 @@
                      <button class="button" onclick="approveRaidToWarriors()">APPROVE</button>
                   </p>
                   <p id="quantity-controls">
-                     <button class="increment-button" id="mint-minus" onclick="decrementClaim();updatePrice();">-</button>
-                     <span id="number-to-mint">1</span>
-                     <button class="increment-button" id="mint-plus" onclick="incrementClaim();updatePrice();">+</button>
+					  <ion-icon id="mint-minus" class="increment-button" onclick="decrementClaim(); updatePrice()" name="remove-circle-outline"></ion-icon>
+					  <span id="number-to-mint">1</span>
+					  <ion-icon id="mint-plus" class="increment-button" onclick="incrementClaim();updatePrice()" name="add-circle-outline"></ion-icon>
                      <br><br>
                      <button class="button" id="max-button" onclick="setMaxMint()">MAX</button>
                   </p>
@@ -150,6 +150,8 @@
    <img src="images/double-bubble-dark.png" loading="lazy" alt="" class="banner-img fixed-banner">
 
       <div id="pending-transactions"></div>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <script
          src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=611d0d9b752438eba744e08d"
          type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
