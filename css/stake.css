@@ -77,7 +77,7 @@ svg#logo {
 }
 
 #available-warrior-images, #staked-warrior-images {
-    border: solid .5vw white;
+    border: solid .3vw white;
     border-radius: 2px;
     height: 50vh;
     overflow-y: scroll;
