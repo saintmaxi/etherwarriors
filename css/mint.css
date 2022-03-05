@@ -120,6 +120,8 @@
 .increment-button {
     font-size: calc(15px + 5vw) !important;
     line-height: calc(15px + 5vw) !important;
+    margin-left: 3vw !important;
+    margin-right: 3vw !important;
     background-color: transparent;
     cursor: pointer;
 }
