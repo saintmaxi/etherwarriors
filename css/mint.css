@@ -132,6 +132,16 @@
     width: 100%;
     text-align: center;
 }
+
+#mint-plus {
+    position: absolute;
+    right: 25%;
+}
+
+#mint-minus {
+    position: absolute;
+    left: 25%;
+}
   
 #mint-tools {
     width: 100%;
@@ -211,6 +221,17 @@
         height: 7vh;
         width: 98%;
         margin-bottom: 5%;
+    }
+
+
+    #mint-plus {
+        position: absolute;
+        right: 15%;
+    }
+
+    #mint-minus {
+        position: absolute;
+        left: 15%;
     }
     
     .increment-button {
