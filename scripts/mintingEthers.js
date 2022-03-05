@@ -118,7 +118,7 @@ function updatePrice() {
     let currentClaim = Number($("#number-to-mint").text());
     let totalMintedAfter = totalMinted += 1;
     if (totalMintedAfter <= 5000) {
-        $("#current-cost").html(`${(priceEth * currentClaim).toFixed(3)} <span style="font-family: Arial, Helvetica, sans-serif;">Ξ</span>`)
+        $("#current-cost").html(`${(priceEth * currentClaim).toFixed(3)} <span id="mint-eth-logo" style="font-family: Arial, Helvetica, sans-serif;">Ξ</span>`)
     }
     else if (totalMintedAfter > 5000 && totalMinted <= 6000) {
         $("#current-cost").text(`${(50 * currentClaim)} $RAID`)
@@ -413,7 +413,7 @@ const updateInfo = async () => {
     let userAddress = await getAddress();
     $("#account").html(`
         <i class="fas fa-circle" style="color: darkgreen; margin-right: 0.2rem"></i>
-        ${userAddress.substr(0,9)}..
+        <span id="text">${userAddress.substr(0,9)}..</span>
     `);
 };
 

@@ -71,7 +71,7 @@ const updateInfo = async () => {
     let userAddress = await getAddress();
     $("#account").html(`
         <i class="fas fa-circle" style="color: darkgreen; margin-right: 0.2rem"></i>
-        ${userAddress.substr(0,9)}..
+        <span id="text">${userAddress.substr(0,9)}..</span>
     `);
     // $("#mobile-account").html(`
     //     <i class="fas fa-circle" style="color: darkgreen; margin-right: 0.2rem"></i>

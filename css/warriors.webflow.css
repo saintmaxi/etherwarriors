@@ -17,7 +17,7 @@ html, body {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 h1, h2 {
@@ -28,10 +28,12 @@ h1 {
 	/*font-family: "Block";*/
 	/* color: #F5CD03 !important; */
 	/*color: #b89326;*/
-	font-size: 2.5vw !important;
+	font-size: 3.5vw !important;
 }
 
 h2 {
+	font-size:  2.9vw;
+	line-height:  2.9vw;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -41,6 +43,82 @@ h3 {
 	line-height: 1.5vw !important;
 	margin: .5vw !important;
 }
+
+h4 {
+	font-size:  1.4vw;
+	line-height:  1.8vw;
+}
+
+h5 {
+	font-size:  1vw !important;
+	line-height:  1.3vw !important;
+}
+
+/* NAVBAR STYLING */
+
+.navbar-brand:hover span, .nav-link:hover {
+	color: rgba(255, 255, 255, 0.705) !important;
+}
+
+.navbar-brand:hover img {
+	opacity: .705;
+}
+
+.navbar-brand {
+	font-size: 3vw !important;
+	line-height: 3vw !important;
+	padding: 1vw !important;
+	margin-right: 0;
+	padding-right: 0 !important;
+}
+
+.navbar-brand img {
+	transition: opacity .15s ease-in-out;
+}
+
+#navbar-brand-text {
+	transition: color .15s ease-in-out;
+}
+
+#directory {
+	padding-left: 7vw;
+	padding-right: 7vw;
+}
+
+#directory .nav-item {
+	display: inline-block;
+	padding-left: 2vw;
+	padding-right: 2vw;
+}
+
+.navbar-brand img {
+	width: 3vw !important;
+	height: 3vw !important;
+}
+
+.nav-link {
+	font-size: 2.5vw !important;
+	line-height: 2.5vw !important;
+	padding-left: .5vw !important;
+	padding-right: .5vw !important;
+	transition: color .15s ease-in-out;
+}
+
+.nav-link img {
+	width: 2vw !important;
+	height: 2vw !important;
+	transition: opacity .15s ease-in-out;
+}
+
+.nav-link img:hover {
+	opacity: .705;
+}
+
+#social-nav a {
+	display: inline-block;
+}
+
+/* END NAVBAR STYLING */
 
 p {
 	font-family: "Pixel", sans-serif;
@@ -54,10 +132,12 @@ p {
 	/*position: absolute;*/
 	display: inline;
 	text-align: center;
-	font-size: 1.25rem;
+	/* font-size: 1.25rem; */
     /*top: 1vw;*/
     /*right: 1vw;*/
-	/*font-size: 1.3vw;*/
+	font-size: 1.7vw;
+	line-height: 1.7vw;
+	padding: .5vw;
 	/*letter-spacing: 3px;*/
   }
 
@@ -179,21 +259,6 @@ p {
 	text-align: center;
 }
 
-h2 {
-	font-size:  1.9vw;
-	line-height:  1.9vw;
-}
-
-h4 {
-	font-size:  1.4vw;
-	line-height:  1.8vw;
-}
-
-h5 {
-	font-size:  1vw !important;
-	line-height:  1.3vw !important;
-}
-
 .banner-img {
 	width: 100%;
 }
@@ -283,6 +348,11 @@ h5 {
 	text-align: center;
 }
 
+.container {
+	max-width: none !important;
+	width: 85%;
+}
+
 .fixed-banner{
 	position:fixed;
     bottom:0;
@@ -346,13 +416,13 @@ h5 {
 	}
 
 	h2 {
-		font-size:  3.4vh;
-		line-height: 3.4vh;
+		font-size:  4vh;
+		line-height: 4vh;
 	}
 
 	h3 {
-		font-size:  2.4vh !important;
-		line-height:  2.9vh !important;
+		font-size:  3vh !important;
+		line-height:  3vh !important;
 	}
 
 	h4 {
@@ -424,20 +494,20 @@ h5 {
       }
     
       .loading-div {
-        font-size: 4vw !important;
-        line-height: 4.6vw !important;
+        font-size: 5vw !important;
+        line-height: 5vw !important;
       }
 
     #error-popup, #status-popup {
         width: 75vw;
-        height: 15vh;
+        height: 20vh;
         border: 5px solid white;
     }
 
     #error-popup p, #status-popup p {
-        font-size: 4vw !important;
-        line-height: 4.4vw !important;
-		width: 80%;
+        font-size: 5vw !important;
+        line-height: 5vw !important;
+		width: 90%;
     }
 
 	h1 {
@@ -452,6 +522,72 @@ h5 {
 		padding-right: 20px;
 		padding-left: 20px
 	}
+
+	/* NAVBAR STYLING */
+
+	#directory {
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 2vh;
+	}
+
+	#directory .nav-item {
+		display: block;
+	}
+
+	#directory a {
+		width: 25%;
+	}
+
+	.navbar-toggler {
+		border-color: rgba(255,255,255, .5) !important;	
+	}
+
+	.navbar-brand {
+		font-size: 5.5vh !important;
+		line-height: 5.5vh !important;
+		padding: 0 !important;
+	}
+
+	.navbar-brand img {
+		width: 5vh !important;
+		height: 5vh !important;
+	}
+
+	.nav-link {
+		font-size: 5.5vh !important;
+		line-height: 5.5vh !important;
+		padding-left: .5vh !important;
+		padding-right: .5vh !important;
+	}
+
+	.nav-link img {
+		width: 5vh !important;
+		height: 5vh !important;
+	}
+
+	#social-nav a {
+		display: inline-block;
+		padding-top: 0;
+	}
+
+	#account {
+		width: 100%;
+		text-align: center;
+		font-size: 3vh;
+		line-height: 3vh;
+		height: 15vw;
+	}
+
+	#account i {
+		width: 10%;
+	}
+
+	#account #text {
+		width: 90%;
+	}
+
+	/* END NAVBAR STYLING */
 }
 
 @media screen and (max-width:479px) {

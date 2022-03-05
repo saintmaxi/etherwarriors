@@ -53,6 +53,8 @@ svg#logo {
 
 .raid-balance-container button {
     width: 75%;
+    font-size: 1.5vw !important;
+    line-height: 1.5vw !important;
 }    
 
 #your-raid-container {
@@ -144,6 +146,8 @@ svg#logo {
 
 .selected {
     color: white;
+    font-size: 2vw !important;
+    line-height: 2vw !important;
 }
 
 .active svg, .active p{
@@ -204,7 +208,18 @@ svg#logo {
     }
 }
 
+.stake-buttons button {
+    width: 38%;
+    font-size: 1.5vw !important;
+    line-height: 1.5vw !important;
+}
+
 @media screen and (max-width: 991px) {
+
+    .stake-buttons button {
+        width: 48%;
+    }
+
 
     #raid-description {
         margin:auto;
@@ -215,8 +230,23 @@ svg#logo {
     }
 
     h2 {
-        font-size: 2.7vh !important;
-        line-height: 2.7vh !important; 
+        font-size: 4.1vh !important;
+        line-height: 4.1vh !important; 
+    }
+
+    h3 {
+        font-size: 3.7vh !important;
+        line-height: 3.7vh !important; 
+    }
+
+    .select-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .selected {
+        font-size: 3.7vh !important;
+        line-height: 3.7vh !important;
     }
 
     .raid-balance-container {
@@ -227,9 +257,10 @@ svg#logo {
         font-size: 3vh;
     }    
 
-    .raid-balance-container button {
+    .raid-balance-container .btn {
         width: 95%;
-        font-size: 2.5vh;
+        font-size: 3.7vh !important;
+        line-height: 3.7vh !important;
         padding: 20px;
     }    
 
@@ -251,6 +282,16 @@ svg#logo {
 
     #staked-warriors-wrapper {
         margin-top: 30px;
+    }
+
+    .stake-buttons .btn {
+        font-size: 3.7vh !important;
+        line-height: 3.7vh !important;
+        width: 100%;
+    }
+
+    #stakeAllButton, #unstakeallButton {
+        margin-top: 10px;
     }
 
     #available-warrior-images, #staked-warrior-images {

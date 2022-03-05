@@ -156,9 +156,56 @@ body {
 	background-color: grey; */
 	width: 60%;
 	margin: 10px;
+	border-radius: 2px;
+    border: solid white .3vw;
+    background-color: #C6823A;
+}
+
+.team-member h3 {
+    font-size: 2.3vw !important;
+    line-height: 2.3vw !important;
+}
+
+#eth-logo {
+    font-size: 2.1vw;
 }
 
 /* end team section styling */
+
+/* Roadmap styling */
+
+.roadmap-div-1 h2, .roadmap-div-2 h2 {
+    font-size: 2.4vw !important;
+    line-height: 2.4vw !important;
+}
+
+.roadmap-text {
+    width: 60%;
+    border-bottom: .3vw solid white;
+    margin: auto;
+}
+
+.roadmap-div-1 {
+    display: inline-block;
+    width: 30%;
+}
+
+.roadmap-div-2 {
+    display: inline-block;
+    width: 40%;
+}
+
+.roadmap-div-2 .roadmap-text {
+    width: 45%;
+    border-bottom: .3vw solid white;
+    margin: auto;
+}
+
+#game-dev {
+    margin-top: 2vw;
+}
+
+/* End roadmap styling */
 
 #bottom-socials a {
     width: 4vw;
@@ -168,6 +215,10 @@ body {
 
 @media screen and (max-width: 991px) {
     /* start header-navbar styling */
+
+    #eth-logo {
+        font-size: 2.4vh;
+    }
 
     #top {
         display: initial;
@@ -249,7 +300,40 @@ body {
         padding-bottom: 4%;
 	}
 
+    .team-member h2 {
+        font-size: 5vh !important;
+        line-height: 5vh !important;
+    }
+
+    .team-member h3 {
+        font-size: 4vh !important;
+        line-height: 4vh !important;
+    }
+
+    .team-member img {
+        border-width: 5px;
+    }
+
     /* end team section styling */
+
+    /* Roadmap styling */
+
+    .roadmap-div-1 h2, .roadmap-div-2 h2 {
+        font-size: 4vh !important;
+        line-height: 4vh !important;
+    }
+
+    .roadmap-div-1 {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .roadmap-div-2 {
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* End roadmap styling */
 
 
     p {
