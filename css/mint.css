@@ -109,12 +109,23 @@
 .hidden {
     display: none;
 }
+
+#inner-quantity-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
   
 .increment-button {
     font-size: calc(15px + 5vw) !important;
     line-height: calc(15px + 5vw) !important;
     background-color: transparent;
     cursor: pointer;
+}
+
+#max-button {
+    margin: auto;
 }
 
 .increment-button:hover {
@@ -133,7 +144,7 @@
     text-align: center;
 }
 
-#mint-plus {
+/* #mint-plus {
     position: absolute;
     right: 25%;
 }
@@ -141,7 +152,7 @@
 #mint-minus {
     position: absolute;
     left: 25%;
-}
+} */
   
 #mint-tools {
     width: 100%;
@@ -224,15 +235,15 @@
     }
 
 
-    #mint-plus {
+    /* #mint-plus {
         position: absolute;
-        right: 15%;
+        right: 15px;
     }
 
     #mint-minus {
         position: absolute;
-        left: 15%;
-    }
+        left: 30px;
+    } */
     
     .increment-button {
       touch-action: manipulation;
