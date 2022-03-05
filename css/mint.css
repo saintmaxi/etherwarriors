@@ -252,6 +252,8 @@
       /*width: initial;*/
       font-size: calc(20px + 15vw) !important;
       line-height: calc(20px + 15vw) !important;
+      margin-left: 2vw !important;
+      margin-right: 2vw !important;
       background-color: transparent;
     }
     
