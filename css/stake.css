@@ -1,5 +1,5 @@
 :root {
-    --active-color: #b758ff;
+    --active-color: #047BFE;
   }
 
 #raid-description {
@@ -335,15 +335,15 @@ svg#logo {
     }
 
     .active svg {
-        border: solid 3px #21D5A7;
+        border: solid 3px var(--active-color);
     }
 
     .your-warrior:hover svg {
-        border: solid 3px #21D5A7;
+        border: solid 3px var(--active-color);
         cursor: pointer;
     }
       
     .active svg {
-        border: solid 3px #21D5A7;
+        border: solid 3px var(--active-color);
     }
 }
